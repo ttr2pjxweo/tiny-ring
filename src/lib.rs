@@ -39,11 +39,15 @@
 //! ring.push(7).unwrap();
 //! assert_eq!(ring.pop(), Ok(7));
 //! assert_eq!(ring.pop(), Err(tiny_ring::PopError));
+//!
+//! let mut batch = Vec::new();
+//! assert_eq!(ring.drain_into(&mut batch, 4), 0);
 //! ```
 #![forbid(unsafe_op_in_unsafe_fn)]
 #![warn(missing_docs)]
 
 mod error;
+mod ops;
 mod ring;
 
 pub use error::{PopError, PushError};
