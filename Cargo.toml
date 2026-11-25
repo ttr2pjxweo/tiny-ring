@@ -1,0 +1,19 @@
+[package]
+name = "tiny-ring"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.63"
+description = "Fixed-capacity, lock-free SPSC ring buffer"
+license = "MIT"
+readme = "README.md"
+keywords = ["ring-buffer", "spsc", "lock-free", "no-std"]
+categories = ["data-structures", "concurrency"]
+
+[dependencies]
+
+[profile.bench]
+debug = true
+
+[[bench]]
+name = "push_pop"
+harness = false
